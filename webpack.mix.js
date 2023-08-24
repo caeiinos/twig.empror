@@ -29,16 +29,6 @@ mix
     }
   })
   .sourceMaps()
-  .browserSync({
-    proxy: "http://localhost/empror/",
-    files: [
-      'dist/**/*.css',
-      'dist/**/*.js',
-      '*.php',
-      'templates/*.twig',
-      'templates/**/*.twig'
-    ]
-  })
   .webpackConfig({
     devtool: 'source-map',
     resolve: {
