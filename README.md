@@ -8,7 +8,7 @@
 
 1. Install Wordpress by `wp core download` and go to wp-content/themes/
 2. `git clone https://github.com/caeiinos/twig.empror.git`
-3. `cd bootimber`
+3. `cd twig.empror`
 3. `composer install` - Timber installation (`/vendor` folder will be created)
 4. `npm install` - Gulp, Bootstrap, BrowserSync, Sass, Autoprefixer, Cssnano installation (`/node-modules` folder will be created)
 5. Activate theme in WP Admin panel
