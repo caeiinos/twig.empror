@@ -1,13 +1,12 @@
-{{ include('base/html-header.twig') }}
+{{ include('parts/head/head.twig') }}
 <body class="{{body_class}}">
-{{ include('base/nav.twig') }}
+{{ include('parts/header/header.twig') }}
 
 {% block content %}
-Empty
+    Empty
 {% endblock %}
 
-{{ include('base/footer.twig') }}
-{{ include('base/scripts.twig') }}
+{{ include('parts/footer/footer.twig') }}
 
 </body>
 </html>

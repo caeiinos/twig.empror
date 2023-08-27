@@ -1,0 +1,30 @@
+{% if posts.pagination.pages %}
+    <nav class="" aria-label="">
+        <ul class="">
+
+            {# Previous #}
+            {% if posts.pagination.prev %}
+                <li class=""><a class="" href="{{ posts.pagination.prev.link }}">Previous</a></li>
+            {% else %}
+                <li class=""><span class="">Previous</span></li>
+            {% endif %}
+
+            {# Pages #}
+            {% for page in posts.pagination.pages %}
+                {% if page.link %}
+                <li class=""><a class="" href="{{ page.link }}">{{ page.title }}</a></li>
+                {% else %}
+                <li class=""><span class="">{{ page.title }}</span></li>
+                {% endif %}
+            {% endfor %}
+
+            {# Next #}
+            {% if posts.pagination.next %}
+                <li class=""><a class="" href="{{ posts.pagination.next.link }}">Next</a></li>
+            {% else %}
+                <li class=""><span class="">Next</span></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

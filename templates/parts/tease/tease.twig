@@ -1,0 +1,21 @@
+{% block teaser %}
+	<article class="tease">
+		{{ include( "parts/terms.twig", {
+			list : post.terms('category'),
+			label : 'catégories',
+			task : 'tease'
+			})
+		}}
+		<h2 class="tease__title">
+			<a class="tease__title__link" href="{{post.link}}">
+				{{post.title}}
+			</a>
+		</h2>
+		<p class="tease__preview">
+			{{post.preview.length(word)}}
+		</p>
+		{% if post.get_thumbnail %}
+			<img class="tease__thumbnail" src="{{ post.thumbnail.src|resize(size) }}" />
+		{% endif %}
+	</article>
+{% endblock %}

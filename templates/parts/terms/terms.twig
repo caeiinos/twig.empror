@@ -1,0 +1,17 @@
+{# pour le mettre quelque part {{include('partial:terms.twig', { list : post_terms('un truc du style tag ou category'), label: 'nom du truc'}) }} #}
+{% if list %}
+  <div class="{{ task }}">
+    <span class="term__title title">
+      {{ label }}
+    </span>
+    <ul class="term__list">
+      {% for term in list %}
+      <li class="term__list__item">
+          <a class="term__list__item__link" href="{{ term.link }}">
+            {{ term.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

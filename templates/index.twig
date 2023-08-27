@@ -2,14 +2,11 @@
 
 {% block content %}
 
-	{# Example of include() with variables #}
-	{{ include('parts/include-example.twig', { template_path: '/index.twig' }) }}
 
-	<div
-		class="container my-3">
+	<div class="">
 
 		{# Loop for posts #}
-		<h2 class="font-weight-bold">Posts</h2>
+		<h2 class="">Posts</h2>
 		{% for post in posts %}
 			<div>
 				<a href="{{ post.link }}">{{ post.title }}</a>
@@ -17,7 +14,7 @@
 		{% endfor %}
 
 		{# Loop for pages #}
-		<h2 class="mt-4 font-weight-bold">Pages</h2>
+		<h2 class="">Pages</h2>
 		{% for page in pages %}
 			<div>
 				<a href="{{ page.link }}">{{ page.title }}</a>
