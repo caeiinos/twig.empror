@@ -1,0 +1,25 @@
+.simple{
+    @include responsive-grid;
+}
+
+.simple__title{
+    grid-column: 1/6;
+}
+
+.simple__subtitle{
+    grid-column: 1/6;
+}
+
+.simple__text{
+    grid-column: 1/6;
+}
+
+.simple__containerimg1{
+    grid-column: 6/-1;
+    grid-row: 1/5;
+}
+
+.simple__img1{
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,35 @@
+.twin{
+    @include responsive-grid;
+}
+
+.twin__title{
+    grid-column: 1/6;
+}
+
+.twin__subtitle{
+    grid-column: 1/6;
+}
+
+.twin__text{
+    grid-column: 1/6;
+}
+
+.twin__containerimg1{
+    grid-column: 6/10;
+    grid-row: 1/5;
+}
+
+.twin__img1{
+    height: 100%;
+    object-fit: cover;
+}
+
+.twin__containerimg2{
+    grid-column: 10/-1;
+    grid-row: 1/5;
+}
+
+.twin__img2{
+    height: 100%;
+    object-fit: cover;
+}

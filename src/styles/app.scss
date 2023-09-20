@@ -1,7 +1,9 @@
 @import 'utils/utils';
 @import 'components/components';
+@import 'acf-block/acf-block';
 
 body {
-    background-color: #222;
-    color: #F6F6F6;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Be Vietnam Pro', sans-serif;
 }

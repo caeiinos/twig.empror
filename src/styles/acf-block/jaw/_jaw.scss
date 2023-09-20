@@ -1,0 +1,25 @@
+.jaw{
+    @include responsive-grid;
+    color: var(--white);
+}
+
+.jaw__title{
+    grid-column: 3/8;
+    grid-row:1;
+}
+
+.jaw__text{
+    grid-column: 3/8;
+    grid-row:2;
+}
+
+.jaw__containerimg1{
+    grid-column: 1/-1;
+    grid-row: 1/4;
+    z-index: -1;
+}
+
+.jaw__img1{
+    height: 100%;
+    object-fit: cover;
+}

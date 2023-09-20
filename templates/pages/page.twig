@@ -2,38 +2,7 @@
 
 {% block content %}
 
-	<h2 class="mb-4 font-weight-bold">{{ post.title }}</h2>
-	<p class="">by {{ post.author }}, {{ post.date }}</p>
+	<h1 class="mb-4 font-weight-bold">{{ post.title }}</h1>
 	<div>{{ post.content }}</div>
-	<p>For more information visit <a href="https://timber.github.io/docs/">Timber Docs</a></p>
-
-
-	<div class="">
-		{{ post.title }}
-		{{ post.content|excerpt(20)}}
-		{{ post.preview }}
-		{{ post.author }}
-		{{ post.date }}
-		{{ post.time }}
-		{{ post.id }}
-		{{ post.status }}
-		{{ post.type }}
-		{{ post.slug }}
-		{{ post.link }}
-
-		{# add some categories and tags to see something here #}
-		{{ post.categories|join(', ') }}
-		{{ post.tags|join(', ') }}
-		{{ rpost.terms|join(', ') }}
-
-	</div>
-
-	<div>
-		<h3>
-			var_dump
-		</h3>
-		
-		{{ dump(post) }}
-	</div>
 
 {% endblock %}

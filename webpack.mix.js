@@ -17,6 +17,7 @@ mix
   .copyDirectory('src/assets', 'dist/assets')
   .js('src/scripts/app.js', 'dist/scripts/')
   .sass('src/styles/app.scss', 'dist/styles/')
+  .sass('src/editor-styles/app.scss', 'dist/editor-styles/')
   .options({
     processCssUrls: false,
     autoprefixer: {

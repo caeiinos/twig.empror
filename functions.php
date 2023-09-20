@@ -8,21 +8,12 @@
  * @since   Timber 0.1
  */
 
-/**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block. 
- */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if ( file_exists($composer_autoload) ) {
 	require_once( $composer_autoload );
 	$timber = new Timber\Timber();
 }
 
-/**
- * This ensures that Timber is loaded and available as a PHP class.
- * If not, it gives an error message to help direct developers on where to activate
- */
 if ( ! class_exists( 'Timber' ) ) {
 
 	add_action( 'admin_notices', function() {
@@ -35,24 +26,11 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
-/**
- * Sets the directories (inside your theme) to find .twig files
- */
 Timber::$dirname = array( 'templates', 'views' );
 
-/**
- * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
- * No prob! Just set this value to true
- */
 Timber::$autoescape = false;
 
-
-/**
- * We're going to configure our theme inside of a subclass of Timber\Site
- * You can move this to its own file and include here via php's include("MySite.php")
- */
 class StarterSite extends Timber\Site {
-	/** Add timber support. */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
@@ -61,19 +39,13 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
 	}
-	/** This is where you can register custom post types. */
 	public function register_post_types() {
 
 	}
-	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
 
 	}
 
-	/** This is where you add some context
-	 *
-	 * @param string $context context['this'] Being the Twig's {{ this }}.
-	 */
 	public function add_to_context( $context ) {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
@@ -87,25 +59,10 @@ class StarterSite extends Timber\Site {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support(
 			'html5', array(
 				'comment-form',
@@ -115,11 +72,6 @@ class StarterSite extends Timber\Site {
 			)
 		);
 
-		/*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
 		add_theme_support(
 			'post-formats', array(
 				'aside',
@@ -135,25 +87,128 @@ class StarterSite extends Timber\Site {
 		add_theme_support( 'menus' );
 	}
 
-	/** This Would return 'foo bar!'.
-	 *
-	 * @param string $text being 'foo', then returned 'foo bar!'.
-	 */
 	public function myfoo( $text ) {
 		$text .= ' bar!';
 		return $text;
 	}
 
-	/** This is where you can add your own functions to twig.
-	 *
-	 * @param string $twig get extension.
-	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
 		return $twig;
 	}
 
+}
+
+add_theme_support( 'editor-styles' );
+add_action('admin_init', 'el_add_editor_styles');
+
+function el_add_editor_styles() {
+	add_editor_style( get_template_directory_uri() . '/dist/editor-styles/app.css' );
+}
+
+add_action('acf/init', 'my_acf_init');
+function my_acf_init() {
+    
+    // check function exists
+    if( function_exists('acf_register_block') ) {
+        
+		// register a twin block
+		acf_register_block(array(
+			'name'              => 'twin',
+			'title'             => __('twin'),
+			'description'       => __('A custom twin block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array( 'twin', 'title', 'subtitle', 'text' ),
+		));
+
+		// register a vision block
+		acf_register_block(array(
+			'name'              => 'vision',
+			'title'             => __('vision'),
+			'description'       => __('A custom vision block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array( 'vision', 'title', 'subtitle', 'text' ),
+		));
+
+		// register a jaw block
+		acf_register_block(array(
+			'name'              => 'jaw',
+			'title'             => __('jaw'),
+			'description'       => __('A custom jaw block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array( 'jaw', 'title', 'text' ),
+		));
+		
+		// register a simple block
+		acf_register_block(array(
+			'name'              => 'simple',
+			'title'             => __('simple'),
+			'description'       => __('A custom simple block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array( 'simple', 'title', 'subtitle', 'text' ),
+		));
+		
+		// register a gallery block
+		acf_register_block(array(
+			'name'              => 'gallery',
+			'title'             => __('gallery'),
+			'description'       => __('A custom gallery block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'custom-layout-category',
+			'icon'              => 'admin-comments',
+			'keywords'          => array( 'gallery', 'title', 'subtitle', 'text' ),
+		));
+    }
+}
+
+function my_acf_block_render_callback( $block ) {
+    
+    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
+    $slug = str_replace('acf/', '', $block['name']);
+    
+    // include a template part from within the "acf-block" folder
+    if( file_exists( get_theme_file_path("acf-block/{$slug}/{$slug}.php") ) ) {
+        include( get_theme_file_path("acf-block/{$slug}/{$slug}.php") );
+    }
+}
+
+function uniques_allowed_block_types( $allowed_blocks ) {
+	return array(
+		//  Common blocks category
+		'acf/vision',
+		'acf/simple',
+		'acf/twin',
+		'acf/jaw',
+		'acf/gallery',
+
+
+	);
+}
+add_filter( 'allowed_block_types', 'uniques_allowed_block_types' );
+
+function register_layout_category( $categories ) {
+	
+	$categories[] = array(
+		'slug'  => 'custom-layout-category',
+		'title' => 'Layout'
+	);
+
+	return $categories;
+}
+
+if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
+	add_filter( 'block_categories_all', 'register_layout_category' );
+} else {
+	add_filter( 'block_categories', 'register_layout_category' );
 }
 
 new StarterSite();

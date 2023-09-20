@@ -1,1 +1,11 @@
 @import 'nav/nav';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    border-bottom: 2px solid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--black);
+}

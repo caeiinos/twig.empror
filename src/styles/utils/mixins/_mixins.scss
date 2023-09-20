@@ -1,0 +1,46 @@
+@function pow($base, $exponent) {
+    $result: 1;
+    @if $exponent == 0{
+        @return $result; 
+    }
+    @else if $exponent < 0{
+        $exponent : abs($exponent);
+        @for $_ from 1 through $exponent {
+            $result: calc($result / $base);
+        }
+        @return $result;  
+    }
+    @else {
+        @for $_ from 1 through $exponent {
+            $result: $result * $base;
+        }
+        @return $result;        
+    }
+
+}
+
+@mixin typo($font-multiplier, $line-multiplier, $margin-multiplier) {
+    $font-size: 17px * pow(1.25, $font-multiplier);
+    $line-height: 17px * pow(1.25, $line-multiplier);
+    $margin-top: 17px * pow(1.25, $margin-multiplier);
+
+    font-size: $font-size;
+    line-height: $line-height;
+    margin-top: $margin-top;
+}
+
+@mixin responsive-grid {
+    margin: auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr); // 4 columns for mobile
+  
+    @media (min-width: 768px) { // Tablet
+        grid-template-columns: repeat(8, 1fr); // 8 columns for tablet
+    }
+  
+    @media (min-width: 1024px) { // Desktop
+        max-width: 1820px;
+        grid-template-columns: repeat(12, 1fr); // 12 columns for desktop
+    }
+  }
