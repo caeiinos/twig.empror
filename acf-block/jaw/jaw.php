@@ -22,5 +22,8 @@ if ($jaw) {
     <div class="jaw__containerimg1 jaw__containerimg1--<?php echo esc_attr($jaw['style']); ?>">
         <img class="jaw__img1 jaw__img1--<?php echo esc_attr($jaw['style']); ?>" src="<?php echo esc_url($jaw['img_1']['url']); ?>" alt="<?php echo esc_attr($jaw['img_1']['alt']); ?>">
     </div>
+    <video>
+        <source src="<?php echo esc_url($jaw['video']['url']); ?>" type="video/mp4" >
+    </video>
 </section>
 <?php }; ?>

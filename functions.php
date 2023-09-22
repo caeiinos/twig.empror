@@ -119,8 +119,8 @@ function my_acf_init() {
 			'title'             => __('twin'),
 			'description'       => __('A custom twin block.'),
 			'render_callback'   => 'my_acf_block_render_callback',
-			'category'          => 'formatting',
-			'icon'              => 'admin-comments',
+			'category'          => 'acf-block',
+			'icon'              => "format-gallery",
 			'keywords'          => array( 'twin', 'title', 'subtitle', 'text' ),
 		));
 
@@ -130,8 +130,8 @@ function my_acf_init() {
 			'title'             => __('vision'),
 			'description'       => __('A custom vision block.'),
 			'render_callback'   => 'my_acf_block_render_callback',
-			'category'          => 'formatting',
-			'icon'              => 'admin-comments',
+			'category'          => 'acf-block',
+			'icon'              => "images-alt2",
 			'keywords'          => array( 'vision', 'title', 'subtitle', 'text' ),
 		));
 
@@ -141,8 +141,8 @@ function my_acf_init() {
 			'title'             => __('jaw'),
 			'description'       => __('A custom jaw block.'),
 			'render_callback'   => 'my_acf_block_render_callback',
-			'category'          => 'formatting',
-			'icon'              => 'admin-comments',
+			'category'          => 'acf-block',
+			'icon'              => "align-full-width",
 			'keywords'          => array( 'jaw', 'title', 'text' ),
 		));
 		
@@ -152,8 +152,8 @@ function my_acf_init() {
 			'title'             => __('simple'),
 			'description'       => __('A custom simple block.'),
 			'render_callback'   => 'my_acf_block_render_callback',
-			'category'          => 'formatting',
-			'icon'              => 'admin-comments',
+			'category'          => 'acf-block',
+			'icon'              => "format-image",
 			'keywords'          => array( 'simple', 'title', 'subtitle', 'text' ),
 		));
 		
@@ -163,9 +163,31 @@ function my_acf_init() {
 			'title'             => __('gallery'),
 			'description'       => __('A custom gallery block.'),
 			'render_callback'   => 'my_acf_block_render_callback',
-			'category'          => 'custom-layout-category',
-			'icon'              => 'admin-comments',
+			'category'          => 'acf-block',
+			'icon'              => "layout",
 			'keywords'          => array( 'gallery', 'title', 'subtitle', 'text' ),
+		));
+
+		// register a quote block
+		acf_register_block(array(
+			'name'              => 'quote',
+			'title'             => __('quote'),
+			'description'       => __('A custom quote block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'acf-block',
+			'icon'              => "format-quote",
+			'keywords'          => array( 'quote', 'title', 'subtitle', 'text' ),
+		));
+
+		// register a twist block
+		acf_register_block(array(
+			'name'              => 'twist',
+			'title'             => __('twist'),
+			'description'       => __('A custom twist block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'acf-block',
+			'icon'              => "columns",
+			'keywords'          => array( 'twist', 'title', 'subtitle', 'text' ),
 		));
     }
 }
@@ -189,26 +211,27 @@ function uniques_allowed_block_types( $allowed_blocks ) {
 		'acf/twin',
 		'acf/jaw',
 		'acf/gallery',
-
+		'acf/quote',
+		'acf/twist',
 
 	);
 }
 add_filter( 'allowed_block_types', 'uniques_allowed_block_types' );
 
-function register_layout_category( $categories ) {
+function register_acfblock_category( $categories ) {
 	
 	$categories[] = array(
-		'slug'  => 'custom-layout-category',
-		'title' => 'Layout'
+		'slug'  => 'acf-block',
+		'title' => 'acf-block'
 	);
 
 	return $categories;
 }
 
 if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
-	add_filter( 'block_categories_all', 'register_layout_category' );
+	add_filter( 'block_categories_all', 'register_acfblock_category' );
 } else {
-	add_filter( 'block_categories', 'register_layout_category' );
+	add_filter( 'block_categories', 'register_acfblock_category' );
 }
 
 new StarterSite();
