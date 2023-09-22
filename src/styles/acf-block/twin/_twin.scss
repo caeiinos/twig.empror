@@ -4,14 +4,18 @@
 
 .twin__title{
     grid-column: 1/6;
+    @include typo(3,4,8);
 }
 
 .twin__subtitle{
     grid-column: 1/6;
+    @include typo(2,3,-1);
 }
 
 .twin__text{
     grid-column: 1/6;
+    @include typo(0,2,-1);
+    margin-bottom:140px;
 }
 
 .twin__containerimg1{

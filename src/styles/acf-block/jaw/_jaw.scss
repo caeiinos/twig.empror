@@ -6,20 +6,24 @@
 .jaw__title{
     grid-column: 3/8;
     grid-row:1;
+    @include typo(3,4,15)
 }
 
 .jaw__text{
     grid-column: 3/8;
     grid-row:2;
+    @include typo(1,1,-1)
 }
 
 .jaw__containerimg1{
     grid-column: 1/-1;
     grid-row: 1/4;
     z-index: -1;
+    height: 60vh;
 }
 
 .jaw__img1{
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }

@@ -1,3 +1,6 @@
+$base: 18px;
+$ratio: 1.25;
+
 @function pow($base, $exponent) {
     $result: 1;
     @if $exponent == 0{
@@ -20,9 +23,9 @@
 }
 
 @mixin typo($font-multiplier, $line-multiplier, $margin-multiplier) {
-    $font-size: 17px * pow(1.25, $font-multiplier);
-    $line-height: 17px * pow(1.25, $line-multiplier);
-    $margin-top: 17px * pow(1.25, $margin-multiplier);
+    $font-size: $base * pow($ratio, $font-multiplier);
+    $line-height: $base * pow($ratio, $line-multiplier);
+    $margin-top: $base * pow($ratio, $margin-multiplier);
 
     font-size: $font-size;
     line-height: $line-height;
@@ -33,6 +36,7 @@
     margin: auto;
     display: grid;
     grid-gap: 20px;
+    row-gap: 0;
     grid-template-columns: repeat(4, 1fr); // 4 columns for mobile
   
     @media (min-width: 768px) { // Tablet
@@ -42,5 +46,10 @@
     @media (min-width: 1024px) { // Desktop
         max-width: 1820px;
         grid-template-columns: repeat(12, 1fr); // 12 columns for desktop
+        padding: 25px 0px;
     }
-  }
+}
+
+@function hierarchy($multiplier) {
+    @return $base * pow($ratio, $multiplier);
+}

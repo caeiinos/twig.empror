@@ -1,0 +1,16 @@
+.quote{
+    @include responsive-grid;
+}
+
+.quote__title{
+    grid-column: 3/8;
+}
+
+.quote__subtitle{
+    grid-column: 3/6;
+}
+
+.quote__text{
+    grid-column: 4/9;
+    width: 55ch;
+}
