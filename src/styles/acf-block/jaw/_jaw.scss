@@ -14,10 +14,15 @@
     grid-row:2;
     @include typo(1,1,-1)
 }
+.jaw__cta{
+    grid-column: 3/8;
+    grid-row:3;
+    @include typo(0,1,-1)
+}
 
 .jaw__containerimg1{
     grid-column: 1/-1;
-    grid-row: 1/4;
+    grid-row: 1/5;
     z-index: -1;
     height: 60vh;
 }

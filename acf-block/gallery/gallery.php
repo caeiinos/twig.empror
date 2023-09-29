@@ -16,23 +16,40 @@ if ($gallery) {
     <h2 class="gallery__title gallery__title--<?php echo esc_attr($gallery['style']); ?>">
         <?php echo esc_html($gallery['title']); ?>
     </h2>
-    <?php
-        $related_post = $gallery['related_post'];
-        if( $related_post ): ?>
-            <ul>
-            <?php foreach( $related_post as $post ): 
+    <?php if ($gallery['element']['type'] == 'posts') {?>
 
-                // Setup this post for WP functions (variable must be named $post).
-                setup_postdata($post); ?>
-                <li>
-                    <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a>
-                    <span>A custom field from this post: <?php esc_html(the_field( 'field_name' )); ?></span>
+        <ul class="gallery__menulist gallery__menulist--<?php echo esc_attr($gallery['style']); ?>">
+
+            <?php foreach ((array) $gallery['element']['post']['related_post'] as $post) { ?>
+                <li class="gallery__postitem gallery__postitem--<?php echo esc_attr($gallery['style']); ?>">
+                    <a class="gallery__postlink gallery__postlink--<?php echo esc_attr($gallery['style']); ?>" href="<?php the_permalink($post->ID); ?>">
+                        <?php echo $post->post_title ?>
+                    </a>
+                    <div class="gallery__postcontent gallery__postcontent--<?php echo esc_attr($gallery['style']); ?>">
+                        <?php echo $post->post_content; ?>
+                    </div>
                 </li>
-            <?php endforeach; ?>
-            </ul>
-            <?php 
-            // Reset the global post object so that the rest of the page works correctly.
-            wp_reset_postdata(); ?>
-        <?php endif; ?>
+
+            <?php } ?>
+        </ul>
+
+    <?php } 
+    else { ?>
+
+        <ul class="gallery__menulist gallery__menulist--<?php echo esc_attr($gallery['style']); ?>">
+
+            <?php foreach ((array) $gallery['element']['image_gallery'] as $img) { ?>
+
+                <li class="gallery__postitem gallery__postitem--<?php echo esc_attr($gallery['style']); ?>">
+                    <div class="gallery__containerimg2 gallery__containerimg2--<?php echo esc_attr($gallery['style']); ?>">
+                        <img class="gallery__img2 gallery__img2--<?php echo esc_attr($gallery['style']); ?> gallery__img2--<?php echo esc_attr($img['image']['image_style']); ?>" src="<?php echo esc_url($img['image']['image']['url']); ?>" alt="<?php echo esc_attr($img['image']['image_alt']); ?>">
+                    </div> 
+                </li>
+
+            <?php } ?>
+
+        </ul>
+        
+    <?php } ?>
 </section>
 <?php }; ?>
