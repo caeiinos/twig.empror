@@ -1,16 +1,59 @@
 .quote{
     @include responsive-grid;
+    margin: hierarchy(4) 0;
 }
 
 .quote__title{
-    grid-column: 3/8;
+    grid-column: 1/-1;    
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }
 
 .quote__subtitle{
-    grid-column: 3/6;
+    grid-column: 1/-1;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }
 
 .quote__text{
-    grid-column: 4/9;
-    width: 55ch;
+    grid-column: 1/-1;
+    max-width: 55ch;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }

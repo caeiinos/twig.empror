@@ -1,23 +1,83 @@
 .vision{
     @include responsive-grid;
+    margin: hierarchy(4) 0;
 }
 
 .vision__title{
-    grid-column: 5/11;
+    grid-column: 1/-1;  
+    grid-row: 1;  
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 3/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/11;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/13;
+    }
 }
 
 .vision__subtitle{
-    grid-column: 5/11;
+    grid-column: 1/-1;    
+    grid-row: 2;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 3/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/11;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/13;
+    }
 }
 
 .vision__text{
-    grid-column: 5/11;
-    width: 55ch;
+    grid-column: 1/-1;    
+    max-width: 55ch;
+    grid-row: 3;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 3/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/11;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/15;
+    }
 }
 
 .vision__containerimg1{
-    grid-column: 1/5;
+    grid-column: 1;
     grid-row: 1/5;
+    z-index: -1;
+
+    @include devices(tablet) {
+        grid-column: 1/3;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/5;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/7;
+    }
 }
 
 .vision__img1{
@@ -26,7 +86,21 @@
 }
 
 .vision__containerimg2{
-    grid-column: 5/9;
+    grid-column: 1/3;
+    grid-row: 4;
+
+    @include devices(tablet) {
+        grid-column: 3/6;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/9;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/12;
+    }
 }
 
 .vision__img2{
@@ -35,7 +109,21 @@
 }
 
 .vision__containerimg3{
-    grid-column: 9/-1;
+    grid-column: 3/-1;
+    grid-row: 4;
+
+    @include devices(tablet) {
+        grid-column: 6/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 9/-1;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 12/-1;
+    }
 }
 
 .vision__img3{

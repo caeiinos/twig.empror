@@ -1,19 +1,19 @@
 *,
 *::before,
-*::after {
+*::after{
     box-sizing: border-box;
 }
 
-* {
+*{
     margin: 0;
 }
 
 html,
-body {
+body{
     height: 100%;
 }
 
-body {
+body{
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
@@ -22,7 +22,7 @@ img,
 picture,
 video,
 canvas,
-svg {
+svg{
     display: block;
     max-width: 100%;
 }
@@ -30,19 +30,20 @@ svg {
 input,
 button,
 textarea,
-select {
+select{
     font: inherit;
 }
 
-ul {
+ul{
     list-style: none;
+    padding: 0%;
 }
 
-a {
+a{
     text-decoration: none;
 }
 
-button {
+button{
     background-color: transparent;
     border: Opx;
 }
@@ -53,11 +54,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6{
     overflow-wrap: break-word;
 }
 
 #root,
-#__next {
+#__next{
     isolation: isolate;
 }

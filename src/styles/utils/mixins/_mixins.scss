@@ -39,17 +39,44 @@ $ratio: 1.25;
     row-gap: 0;
     grid-template-columns: repeat(4, 1fr); // 4 columns for mobile
   
-    @media (min-width: 768px) { // Tablet
+    @media (min-width: 680px) { // Tablet
         grid-template-columns: repeat(8, 1fr); // 8 columns for tablet
     }
   
     @media (min-width: 1024px) { // Desktop
-        max-width: 1820px;
+        max-width: 1320px;
         grid-template-columns: repeat(12, 1fr); // 12 columns for desktop
+        padding: 25px 0px;
+    }
+
+    @media (min-width: 1450px) { // Desktop
+        max-width: 1920px;
+        grid-template-columns: repeat(16, 1fr); // 12 columns for desktop
         padding: 25px 0px;
     }
 }
 
 @function hierarchy($multiplier) {
     @return $base * pow($ratio, $multiplier);
+}
+
+@mixin devices ($breakpoint) {
+
+    @if $breakpoint ==tablet {
+        @media only screen and (min-width: 680px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==littlePC {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==bigPC {
+        @media only screen and (min-width: 1450px) {
+            @content;
+        }
+    }
 }

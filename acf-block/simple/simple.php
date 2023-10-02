@@ -19,6 +19,9 @@ if ($simple) {
     <h3 class="simple__subtitle simple__subtitle--<?php echo esc_attr($simple['style']); ?>">
         <?php echo esc_html($simple['subtitle']); ?>
     </h3>
+    <div class="simple__text simple__text--<?php echo esc_attr($simple['style']); ?>">
+        <?php echo esc_html($simple['text']); ?>
+    </div>
 
     <!-- first element -->
     <div class="simple__containerimg1 simple__containerimg1--<?php echo esc_attr($simple['style']); ?>">

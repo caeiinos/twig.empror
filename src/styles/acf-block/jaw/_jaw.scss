@@ -1,23 +1,68 @@
 .jaw{
     @include responsive-grid;
     color: var(--white);
+    margin: hierarchy(4) 0;
 }
 
 .jaw__title{
-    grid-column: 3/8;
+    grid-column: 1/-1;
     grid-row:1;
-    @include typo(3,4,15)
+    @include typo(2,3,10);
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        @include typo(2,3,10);
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+        @include typo(3,4,15);
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }
 
 .jaw__text{
-    grid-column: 3/8;
+    grid-column: 1/-1;
     grid-row:2;
-    @include typo(1,1,-1)
+    @include typo(1,1,-1);
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }
 .jaw__cta{
-    grid-column: 3/8;
+    grid-column: 1/-1;
     grid-row:3;
-    @include typo(0,1,-1)
+    @include typo(0,1,-1);
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 2/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 3/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/10;
+    }
 }
 
 .jaw__containerimg1{

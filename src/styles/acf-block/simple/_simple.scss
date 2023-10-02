@@ -1,22 +1,80 @@
 .simple{
     @include responsive-grid;
+    margin: hierarchy(4) 0;
 }
 
 .simple__title{
-    grid-column: 1/6;
+    grid-column: 1/-1;    
+    grid-row: 1;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/7;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 2/8;
+    }
 }
 
 .simple__subtitle{
-    grid-column: 1/6;
+    grid-column: 1/-1;    
+    grid-row: 2;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/7;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 2/8;
+    }
 }
 
 .simple__text{
-    grid-column: 1/6;
+    grid-column: 1/-1;  
+    grid-row: 3;  
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/7;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 2/8;
+    }
 }
 
 .simple__containerimg1{
-    grid-column: 6/-1;
-    grid-row: 1/5;
+    grid-column: 1/-1;
+    
+    @include devices(tablet) {
+        grid-column: 5/-1;
+        grid-row: 1/5;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 7/-1;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 8/-1;
+    }
 }
 
 .simple__img1{

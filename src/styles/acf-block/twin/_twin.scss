@@ -1,26 +1,80 @@
 .twin{
     @include responsive-grid;
+    margin: hierarchy(4) 0;
 }
 
 .twin__title{
-    grid-column: 1/6;
-    @include typo(3,4,8);
+    grid-column: 1/-1;    
+    grid-row: 1;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/6;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/7;
+    }
 }
 
 .twin__subtitle{
-    grid-column: 1/6;
-    @include typo(2,3,-1);
+    grid-column: 1/-1;    
+    grid-row: 2;
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/6;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/7;
+    }
 }
 
 .twin__text{
-    grid-column: 1/6;
-    @include typo(0,2,-1);
-    margin-bottom:140px;
+    grid-column: 1/-1;  
+    grid-row: 3;  
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/6;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/7;
+    }
 }
 
 .twin__containerimg1{
-    grid-column: 6/10;
-    grid-row: 1/5;
+    grid-column: 1/-1;
+    
+    @include devices(tablet) {
+        grid-column: 5/7;
+        grid-row: 1/5;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 6/10;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/12;
+    }
 }
 
 .twin__img1{
@@ -29,8 +83,20 @@
 }
 
 .twin__containerimg2{
-    grid-column: 10/-1;
-    grid-row: 1/5;
+    grid-column: 1/-1;
+
+    @include devices(tablet) {
+        grid-column: 7/-1;
+        grid-row: 1/5;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 10/-1;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 12/-1;
+    }
 }
 
 .twin__img2{

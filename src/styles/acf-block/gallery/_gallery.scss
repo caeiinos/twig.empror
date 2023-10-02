@@ -1,3 +1,38 @@
 .gallery{
     @include responsive-grid;
+    margin: hierarchy(4) 0;
+}
+
+.gallery__title{
+    grid-column: 1/-1;  
+    grid-row: 1;  
+    margin-left: hierarchy(4);
+
+    @include devices(tablet) {
+        grid-column: 1/4;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/5;    
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/6;
+    }
+}
+
+.gallery__menulist{
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery__containerimg2{
+    height: 100%;
+}
+
+.gallery__img2{
+    height: 100%;
+    object-fit: cover;
 }

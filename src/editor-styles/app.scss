@@ -8,9 +8,12 @@
 .acf-block-body .acf-block-fields {
     border-radius: 20px;
     border: solid 2px #ECEFF1;
+    box-shadow: 7px 7px 0px 0px #ECEFF1;
 }
 
 .acf-input-wrap{
+    box-shadow: 2px 2px 0px 0px #ECEFF1;
+    border-radius: 10px;
     input{
         border-radius: 10px;
         padding: 10px 20px;
@@ -127,6 +130,7 @@ div.mce-toolbar-grp>div{
     border-radius: 10px;
     padding: 10px 20px;
     border: solid 2px #ECEFF1;
+    box-shadow: 2px 2px 0px 0px #ECEFF1;
 }
 
 .html-active{
@@ -159,7 +163,7 @@ div.mce-toolbar-grp>div{
         bottom: 0;
         left: 0;
         pointer-events: none;
-        border-bottom: 2px solid #ECEFF1;
+        border-bottom: 2px dashed #ECEFF1;
         width: calc(100% - 20px );
     }
 
@@ -244,5 +248,45 @@ div.mce-toolbar-grp>div{
             top: 5px;
             left: -35px;
         }   
+    }
+}
+
+.acf-field[data-name="cta"], .acf-field[data-name="video"], .acf-field[data-name="post"], .acf-field[data-name="menu"]{
+
+    .acf-input .acf-fields{
+        display: flex;
+
+        .acf-field{
+            flex-basis: 33%;
+        }
+    }
+    
+    border: 2px solid #ECEFF1;
+    margin: 20px;
+    border-radius: 10px;
+    padding-bottom: 30px !important;
+
+    label{
+        padding-top: 10px;
+    }
+
+    .acf-checkbox-list{
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            flex-basis: 50%;
+        }
+    }
+}
+
+.acf-field-group[data-name="image"]{
+    border: 2px solid #ECEFF1;
+    margin: 20px;
+    border-radius: 10px;
+    padding-bottom: 30px !important;
+
+    label{
+        padding-top: 10px;
     }
 }

@@ -36,9 +36,11 @@ if ($vision) {
     else { ?>
 
         <div class="vision__containerimg1 vision__containerimg1--<?php echo esc_attr($vision['style']); ?>">
-            <video <?php foreach( $vision['first_element']['video']['video_attributs'] as $attr ){ echo esc_attr($attr . ' ') ; } ?> class="vision__img1 vision__img1--<?php echo esc_attr($vision['style']); ?>">
-                <source src="<?php echo esc_url($vision['first_element']['video']['video_url']); ?>" type="video/<?php echo esc_attr($vision['first_element']['video']['video_type']); ?>" >
-            </video> 
+            <div class="vision__img1 vision__img1--<?php echo esc_attr($vision['style']); ?>">
+                <video <?php foreach( $vision['first_element']['video']['video_attributs'] as $attr ){ echo esc_attr($attr . ' ') ; } ?> class="vision__img1 vision__img1--<?php echo esc_attr($vision['style']); ?>">
+                    <source src="<?php echo esc_url($vision['first_element']['video']['video_url']); ?>" type="video/<?php echo esc_attr($vision['first_element']['video']['video_type']); ?>" >
+                </video>                 
+            </div>
         </div> 
 
     <?php }; ?>
