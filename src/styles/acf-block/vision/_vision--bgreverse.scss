@@ -1,0 +1,106 @@
+.vision__containerimg3--background-reverse{
+    grid-column: 1/-1;
+    grid-row: 1/6;
+    z-index: -2;
+}
+
+.vision__title--background-reverse{ 
+    margin-left: hierarchy(2);
+    margin-top: hierarchy(3);
+
+
+    @include devices(tablet) {
+        grid-column: 1/7;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/13;
+    }
+}
+
+.vision__subtitle--background-reverse{
+    margin-left: hierarchy(2);
+
+    @include devices(tablet) {
+        grid-column: 1/7;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/13;
+    }
+}
+
+.vision__text--background-reverse{
+    margin-left: hierarchy(2);
+
+    @include devices(tablet) {
+        grid-column: 1/7;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/8;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 4/13;    
+    }
+}
+
+
+.vision__containerimg1--background-reverse{
+
+    grid-column: 1/3;
+    grid-row: 4;
+    z-index: -1;
+
+    @include devices(tablet) {
+        grid-column: 1/4;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/5;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/7;
+    }
+}
+
+.vision__img1--background-reverse{
+    height: 100%;
+    object-fit: cover;
+}
+
+.vision__containerimg2--background-reverse{
+    grid-column: 3/-1;
+
+    @include devices(tablet) {
+        grid-column: 4/7;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/9;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 7/13;
+    }
+}
+
+.vision__img2--background-reverse{
+    height: 100%;
+    object-fit: cover;
+}

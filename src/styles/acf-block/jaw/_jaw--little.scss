@@ -1,0 +1,17 @@
+.jaw__title--little{
+    @include typo(2,3,2);
+
+    @include devices(tablet) {
+    }
+
+    @include devices(littlePC) {
+        @include typo(3,4,3);
+    }
+
+    @include devices(bigPC) {
+    }
+}
+
+.jaw__containerimg1{
+    height: 20vh;
+}
