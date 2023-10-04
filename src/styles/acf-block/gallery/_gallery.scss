@@ -1,8 +1,10 @@
+// gallery block
 .gallery{
     @include responsive-grid;
-    margin: hierarchy(4) 0;
+    margin: hierarchy(4) auto;
 }
 
+// gallery title
 .gallery__title{
     grid-column: 1/-1;  
     grid-row: 1;  
@@ -22,6 +24,7 @@
     }
 }
 
+// gallery title
 .gallery__menulist{
     grid-column: 1/-1;
     display: grid;

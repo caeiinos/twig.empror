@@ -1,0 +1,5 @@
+// contact block
+.contact{
+    @include responsive-grid;
+    margin: hierarchy(4) auto;
+}

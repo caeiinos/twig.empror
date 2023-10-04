@@ -1,8 +1,14 @@
+// vison title
 .vision__title{
     margin-top: hierarchy(3);
 }
 
+// vison bg image
 .vision__containerimg1--background{
     grid-column: 1/-1;
     grid-row: 1/6;
+}
+
+.vision__img1--background{
+    width: 100%;
 }

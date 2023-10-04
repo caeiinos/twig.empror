@@ -1,8 +1,10 @@
+// vision block
 .vision{
     @include responsive-grid;
-    margin: hierarchy(4) 0;
+    margin: hierarchy(4) auto;
 }
 
+// vison title
 .vision__title{
     grid-column: 1/-1;  
     grid-row: 1;  
@@ -22,6 +24,7 @@
     }
 }
 
+// vison subtitle
 .vision__subtitle{
     grid-column: 1/-1;    
     grid-row: 2;
@@ -41,6 +44,7 @@
     }
 }
 
+// vison text
 .vision__text{
     grid-column: 1/-1;    
     max-width: 55ch;
@@ -61,6 +65,7 @@
     }
 }
 
+// vison img1
 .vision__containerimg1{
     grid-column: 1;
     grid-row: 1/5;
@@ -80,6 +85,7 @@
     }
 }
 
+// vison img2
 .vision__img1{
     height: 100%;
     object-fit: cover;
@@ -108,6 +114,7 @@
     object-fit: cover;
 }
 
+// vison img3
 .vision__containerimg3{
     grid-column: 3/-1;
     grid-row: 4;

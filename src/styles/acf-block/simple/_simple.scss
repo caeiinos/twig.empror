@@ -1,8 +1,10 @@
+// simple block
 .simple{
     @include responsive-grid;
-    margin: hierarchy(4) 0;
+    margin: hierarchy(4) auto;
 }
 
+// simple title
 .simple__title{
     grid-column: 1/-1;    
     grid-row: 1;
@@ -22,6 +24,7 @@
     }
 }
 
+// simple subtitle
 .simple__subtitle{
     grid-column: 1/-1;    
     grid-row: 2;
@@ -41,6 +44,7 @@
     }
 }
 
+// simple text
 .simple__text{
     grid-column: 1/-1;  
     grid-row: 3;  
@@ -60,6 +64,7 @@
     }
 }
 
+// simple img1
 .simple__containerimg1{
     grid-column: 1/-1;
     

@@ -1,0 +1,5 @@
+// faq block
+.faq{
+    @include responsive-grid;
+    margin: hierarchy(4) auto;
+}

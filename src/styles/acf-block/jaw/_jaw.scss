@@ -1,9 +1,11 @@
+// jaw block
 .jaw{
     @include responsive-grid;
     color: var(--white);
-    margin: hierarchy(4) 0;
+    margin: hierarchy(4) auto;
 }
 
+// jaw title
 .jaw__title{
     grid-column: 1/-1;
     grid-row:1;
@@ -26,6 +28,7 @@
     }
 }
 
+// jaw text
 .jaw__text{
     grid-column: 1/-1;
     grid-row:2;
@@ -45,6 +48,8 @@
         grid-column: 4/10;
     }
 }
+
+// jaw cta
 .jaw__cta{
     grid-column: 1/-1;
     grid-row:3;
@@ -65,6 +70,7 @@
     }
 }
 
+// jaw bg img
 .jaw__containerimg1{
     grid-column: 1/-1;
     grid-row: 1/5;
