@@ -100,6 +100,7 @@ class StarterSite extends Timber\Site {
 
 }
 
+// allowed editor style
 add_theme_support( 'editor-styles' );
 add_action('admin_init', 'el_add_editor_styles');
 
@@ -107,6 +108,7 @@ function el_add_editor_styles() {
 	add_editor_style( get_template_directory_uri() . '/dist/editor-styles/app.css' );
 }
 
+// register acf blocks
 add_action('acf/init', 'my_acf_init');
 function my_acf_init() {
     
@@ -189,9 +191,32 @@ function my_acf_init() {
 			'icon'              => "columns",
 			'keywords'          => array( 'twist', 'title', 'subtitle', 'text' ),
 		));
+
+		// register a faq block
+		acf_register_block(array(
+			'name'              => 'faq',
+			'title'             => __('faq'),
+			'description'       => __('A custom faq block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'acf-block',
+			'icon'              => "info",
+			'keywords'          => array( 'faq', 'title', 'subtitle', 'text' ),
+		));
+
+		// register a contact block
+		acf_register_block(array(
+			'name'              => 'contact',
+			'title'             => __('contact'),
+			'description'       => __('A custom contact block.'),
+			'render_callback'   => 'my_acf_block_render_callback',
+			'category'          => 'acf-block',
+			'icon'              => "email",
+			'keywords'          => array( 'contact', 'title', 'subtitle', 'text' ),
+		));
     }
 }
 
+// allowed to set a acf in a blocks
 function my_acf_block_render_callback( $block ) {
     
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")
@@ -203,9 +228,9 @@ function my_acf_block_render_callback( $block ) {
     }
 }
 
+// set allowed blocks
 function uniques_allowed_block_types( $allowed_blocks ) {
 	return array(
-		//  Common blocks category
 		'acf/vision',
 		'acf/simple',
 		'acf/twin',
@@ -213,6 +238,8 @@ function uniques_allowed_block_types( $allowed_blocks ) {
 		'acf/gallery',
 		'acf/quote',
 		'acf/twist',
+		'acf/faq',
+		'acf/contact',
 
 	);
 }
