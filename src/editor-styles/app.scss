@@ -251,7 +251,7 @@ div.mce-toolbar-grp>div{
     }
 }
 
-.acf-field[data-name="cta"], .acf-field[data-name="video"], .acf-field[data-name="post"], .acf-field[data-name="menu"]{
+.acf-field[data-name="cta"], .acf-field[data-name="video"]{
 
     .acf-input .acf-fields{
         display: flex;
@@ -280,7 +280,7 @@ div.mce-toolbar-grp>div{
     }
 }
 
-.acf-field-group[data-name="image"]{
+.acf-field-group[data-name="image"], .acf-field[data-name="post"], .acf-field[data-name="menu"], .acf-field-group[data-name="address"]{
     border: 2px solid #ECEFF1;
     margin: 20px;
     border-radius: 10px;
