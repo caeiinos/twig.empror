@@ -223,8 +223,8 @@ function my_acf_block_render_callback( $block ) {
     $slug = str_replace('acf/', '', $block['name']);
     
     // include a template part from within the "acf-block" folder
-    if( file_exists( get_theme_file_path("acf-block/{$slug}/{$slug}.php") ) ) {
-        include( get_theme_file_path("acf-block/{$slug}/{$slug}.php") );
+    if( file_exists( get_theme_file_path("acf-block/block/{$slug}/{$slug}.php") ) ) {
+        include( get_theme_file_path("acf-block/block/{$slug}/{$slug}.php") );
     }
 }
 
@@ -240,7 +240,6 @@ function uniques_allowed_block_types( $allowed_blocks ) {
 		'acf/twist',
 		'acf/faq',
 		'acf/contact',
-
 	);
 }
 add_filter( 'allowed_block_types', 'uniques_allowed_block_types' );
