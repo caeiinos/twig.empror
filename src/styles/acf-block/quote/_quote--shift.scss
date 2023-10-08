@@ -1,0 +1,50 @@
+// quote title
+.quote__title--shift{  
+    @include devices(tablet) {
+        grid-column: 2/8;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/7;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 2/9;
+    }
+}
+
+// quote subtitle
+.quote__subtitle--shift{
+    @include devices(tablet) {
+        grid-column: 2/6;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 2/5;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 2/5;
+    }
+}
+
+// quote text
+.quote__text--shift{
+    margin-left: hierarchy(6);
+
+    @include devices(tablet) {
+        grid-column: 3/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 5/-1;
+        grid-row: 2;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 5/-1;
+    }
+}

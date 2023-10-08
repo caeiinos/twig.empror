@@ -65,7 +65,7 @@
 }
 
 // simple img1
-.simple__containerimg1{
+.simple__fst_container{
     grid-column: 1/-1;
     
     @include devices(tablet) {
@@ -82,7 +82,7 @@
     }
 }
 
-.simple__img1{
+.simple__fst_image{
     height: 100%;
     object-fit: cover;
 }

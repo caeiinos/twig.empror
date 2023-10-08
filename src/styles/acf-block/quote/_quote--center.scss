@@ -1,0 +1,59 @@
+// quote title
+.quote__title--center{  
+    text-align: center;
+    grid-column: 1/-1;
+    margin-left: 0;
+
+    @include devices(tablet) {
+        grid-column: 1/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/-1;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/-1;
+    }
+}
+
+// quote subtitle
+.quote__subtitle--center{   
+    text-align: center;
+    grid-column: 1/-1;
+    margin-left: 0;
+
+    @include devices(tablet) {
+        grid-column: 1/-1;
+        margin-left: 0;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/-1;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/-1;
+    }
+}
+
+// quote text
+.quote__text--center{
+    text-align: center;
+    grid-column: 1/-1;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include devices(tablet) {
+        grid-column: 1/-1;
+    }
+
+    @include devices(littlePC) {
+        grid-column: 1/-1;
+    }
+
+    @include devices(bigPC) {
+        grid-column: 1/-1;
+    }
+}

@@ -3,3 +3,27 @@
     @include responsive-grid;
     margin: hierarchy(4) auto;
 }
+
+// contact title
+.contact__title{
+    grid-column: 1/-1;
+}
+
+// contact mail
+.contact__mail{
+    grid-column: 1/-1;
+}
+
+// contact phone
+.contact__phone{
+    grid-column: 1/-1;
+}
+
+// contact address
+.contact__address{
+    grid-column: 1/-1;
+
+    span{
+        display: block;
+    }
+}

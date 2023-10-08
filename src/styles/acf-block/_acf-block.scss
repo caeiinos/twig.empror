@@ -7,6 +7,9 @@
 
 //import simple block style
 @import 'simple/simple';
+@import 'simple/simple--reverse';
+@import 'simple/simple--shift';
+@import 'simple/simple--shift-reverse';
 
 //import twin block style
 @import 'twin/twin';
@@ -23,6 +26,9 @@
 
 //import quote block style
 @import 'quote/quote';
+@import 'quote/quote--far';
+@import 'quote/quote--shift';
+@import 'quote/quote--center';
 
 //import faq block style
 @import 'faq/faq';

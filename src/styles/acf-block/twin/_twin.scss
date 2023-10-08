@@ -65,7 +65,7 @@
 }
 
 // twin img1
-.twin__containerimg1{
+.twin__fst_container{
     grid-column: 1/-1;
     
     @include devices(tablet) {
@@ -82,13 +82,13 @@
     }
 }
 
-.twin__img1{
+.twin__fst_image{
     height: 100%;
     object-fit: cover;
 }
 
 // twin img2
-.twin__containerimg2{
+.twin__scd_conatiner{
     grid-column: 1/-1;
 
     @include devices(tablet) {
@@ -105,7 +105,7 @@
     }
 }
 
-.twin__img2{
+.twin__scd_image{
     height: 100%;
     object-fit: cover;
 }
